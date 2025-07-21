@@ -1,25 +1,16 @@
 import styled from "styled-components";
-import { useAppDispatch } from "../hooks/useRedux";
-import { setBooking } from "../features/bookingSlice";
+import { Placeholder } from "../components/Placeholder/Placeholder";
 
 const Container = styled.div`
-  padding: 2rem;
-  font-family: sans-serif;
+  height: 100%;
+  padding: 0;
+  margin: 0;
 `;
 
 export const Home = () => {
-  const dispatch = useAppDispatch();
-
-  const handleClick = () => {
-    dispatch(setBooking({ service: "Барбер", time: "15:00" }));
-    window.Telegram.WebApp.sendData("Бронирование отправлено");
-    window.Telegram.WebApp.close();
-  };
-
   return (
     <Container>
-      <h1>Запись на услугу</h1>
-      <button onClick={handleClick}>Записаться на 15:00 к Барберу</button>
+      <Placeholder />
     </Container>
   );
 };
